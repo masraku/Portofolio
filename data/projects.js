@@ -5,6 +5,7 @@ export const projects = [
       'A job portal system designed to centralize and present verified job listings, helping job seekers access reliable employment information efficiently.',
     tech: ['Next.js', 'Prisma', 'PostgreSQL', 'Tailwind'],
     demoUrl: '/demo/jobs',
+    image: '/assets/disnaker.png',
   },
   {
     title: 'Public Complaint Management System',
@@ -12,5 +13,6 @@ export const projects = [
       'A web-based system that enables citizens to submit complaints and allows administrators to manage reports with clear status tracking.',
     tech: ['Next.js', 'Prisma', 'PostgreSQL', 'Tailwind'],
     demoUrl: '/demo/complaints',
+    image: '/assets/pengaduan.png',
   },
 ]

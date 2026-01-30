@@ -8,12 +8,7 @@ import { ArrowRight, Download, Mail, Sparkles } from "lucide-react";
 export default function Hero() {
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center overflow-hidden">
-      {/* Background Gradients & Spotlight */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] mix-blend-screen animate-blob" />
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] mix-blend-screen animate-blob animation-delay-2000" />
-        <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-500/10 rounded-full blur-[100px]" />
-      </div>
+      {/* Background Gradients & Spotlight -> Removed to use Global AnimatedBackground */}
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}

@@ -14,6 +14,10 @@ import {
   SiTailwindcss,
   SiFramer,
   SiGit,
+  SiGithub,
+  SiLinkedin,
+  SiInstagram,
+  SiX,
 } from "react-icons/si";
 
 export default function AboutPage() {
@@ -44,9 +48,6 @@ export default function AboutPage() {
                 className="object-cover"
               />
             </div>
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-cyan-500/20 rounded-full blur-2xl" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl" />
           </div>
 
           {/* Intro Text */}
@@ -59,13 +60,49 @@ export default function AboutPage() {
               scalable, and maintainable web applications. I enjoy turning
               complex problems into simple, beautiful solutions.
             </p>
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-6">
               <span className="px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm font-medium">
                 🇮🇩 Based in Indonesia
               </span>
               <span className="px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-300 text-sm font-medium">
                 ✅ Available for Work
               </span>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex gap-4 justify-center md:justify-start">
+              <a
+                href="https://github.com/masraku"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-purple-500/30 hover:bg-white/10 transition-all group"
+              >
+                <SiGithub className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/laksmana-rakho-53a9b0245/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-blue-500/30 hover:bg-white/10 transition-all group"
+              >
+                <SiLinkedin className="w-5 h-5 text-gray-400 group-hover:text-blue-400 transition-colors" />
+              </a>
+              <a
+                href="https://www.instagram.com/masrakuuu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-pink-500/30 hover:bg-white/10 transition-all group"
+              >
+                <SiInstagram className="w-5 h-5 text-gray-400 group-hover:text-pink-400 transition-colors" />
+              </a>
+              <a
+                href="https://x.com/masrakuuu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-pink-500/30 hover:bg-white/10 transition-all group"
+              >
+                <SiX className="w-5 h-5 text-gray-400 group-hover:text-pink-400 transition-colors" />
+              </a>
             </div>
           </div>
         </motion.div>

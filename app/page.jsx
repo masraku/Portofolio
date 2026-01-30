@@ -8,7 +8,7 @@ import { ArrowRight, Code2, Layout, Database, Rocket } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#030014]">
+    <main className="min-h-screen">
       <Hero />
 
       {/* Services Section */}
@@ -85,8 +85,23 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Background Gradient for this section */}
-      <div className="fixed bottom-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[100px] -z-10 pointer-events-none" />
+      {/* Final CTA Section */}
+      <Section className="py-20 px-6 max-w-4xl mx-auto text-center relative z-10">
+        <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border border-purple-500/20 backdrop-blur-sm">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            Ready to build something amazing?
+          </h2>
+          <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
+            I'm currently available for freelance work and open to new
+            opportunities. Let's discuss how I can help your business grow.
+          </p>
+          <Link href="/contact">
+            <button className="px-8 py-4 rounded-full bg-white text-black font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-xl shadow-white/10">
+              Let's Work Together
+            </button>
+          </Link>
+        </div>
+      </Section>
     </main>
   );
 }

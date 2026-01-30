@@ -50,9 +50,6 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen pt-32 pb-20 px-6 flex items-center justify-center relative overflow-hidden">
-      {/* Background Gradients */}
-      <div className="absolute top-0 transform -translate-x-1/2 left-1/2 w-[1000px] h-[500px] bg-purple-500/20 rounded-full blur-[100px] -z-10" />
-
       <Section className="max-w-xl w-full">
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500">

@@ -6,25 +6,46 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
-    title: "Web Developer (Freelance)",
-    period: "2024 — Present",
-    description:
-      "Working on designing and developing responsive websites and web applications for small businesses and individual clients. Focused on clean UI, performance, and maintainable code.",
+    title: "Fullstack Developer",
+    company: "Disnaker Cirebon",
+    period: "2026",
+    type: "Fullstack Developer",
+    tasks: [
+      "Developed a web application for public jobseekers",
+      "Implemented user authentication and authorization",
+      "Designed and developed RESTful APIs",
+    ],
   },
   {
-    title: "Academic & Project-Based Development",
-    period: "2023 — 2024",
-    description:
-      "Built fullstack web applications including a public complaint management system and a job portal inspired by government employment services.",
+    title: "Intern Fullstack Developer",
+    company: "Jakarta Pasti Happy",
+    period: "2025",
+    type: "Fullstack Developer",
+    tasks: [
+      "Developed a web application for public complaints",
+      "Implemented user authentication and authorization",
+      "Designed and developed RESTful APIs",
+    ],
+  },
+  {
+    title: "Admin & Warehouse Staff",
+    company: "PT Guna Maju Bersama",
+    period: "2021 — 2023",
+    type: "Admin and Warehouse Staff",
+    tasks: [
+      "Monitored stock in and out",
+      "Performed stock opname",
+      "Packed stock",
+      "Created PO (Purchase Order)",
+      "Created PR (Purchase Request)",
+      "Created BAST (Berita Acara Serah Terima)",
+    ],
   },
 ];
 
 export default function ExperiencePage() {
   return (
     <main className="min-h-screen pt-32 pb-20 px-6 relative overflow-hidden">
-      {/* Background Gradients */}
-      <div className="absolute top-0 transform -translate-x-1/2 left-1/2 w-[1000px] h-[500px] bg-purple-500/20 rounded-full blur-[100px] -z-10" />
-
       <Section className="max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500">
           Work Experience
@@ -43,7 +64,7 @@ export default function ExperiencePage() {
                 transition={{ delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
                   <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">
                     {exp.title}
                   </h3>
@@ -53,13 +74,49 @@ export default function ExperiencePage() {
                   </div>
                 </div>
 
-                <p className="text-gray-400 leading-relaxed">
-                  {exp.description}
+                <p className="text-purple-300 font-medium mb-4">
+                  {exp.company}
                 </p>
+
+                <ul className="space-y-2">
+                  {exp.tasks.map((task, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-3 text-gray-400"
+                    >
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-cyan-500 shrink-0" />
+                      {task}
+                    </li>
+                  ))}
+                </ul>
               </Card>
             </div>
           ))}
         </div>
+
+        {/* Freelance CTA */}
+        <Card className="mt-16 p-8 md:p-10 bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border-purple-500/20 text-center">
+          <div className="flex justify-center mb-4">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+          </div>
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            Open for Freelance Projects
+          </h3>
+          <p className="text-gray-400 max-w-xl mx-auto mb-6 leading-relaxed">
+            Looking for a developer to build your website or web application?
+            I'm available for freelance work and would love to help bring your
+            ideas to life.
+          </p>
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium hover:opacity-90 transition-opacity"
+          >
+            Let's Work Together
+          </a>
+        </Card>
       </Section>
     </main>
   );
