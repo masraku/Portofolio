@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id         Int         @id @default(autoincrement())
+  name       String
+  email      String      @unique
+  password   String
+  role       Role        @default(USER)
+  complaints Complaint[]
+  createdAt  DateTime    @default(now())
+}
+
+model Complaint {
+  id          Int             @id @default(autoincrement())
+  title       String
+  description String
+  status      ComplaintStatus @default(SUBMITTED)
+  userId      Int
+  user        User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime        @default(now())
+}
+
+model Company {
+  id        Int      @id @default(autoincrement())
+  name      String
+  jobs      Job[]
+  createdAt DateTime @default(now())
+}
+
+model Job {
+  id        Int      @id @default(autoincrement())
+  title     String
+  location  String
+  companyId Int
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum ComplaintStatus {
+  SUBMITTED
+  IN_PROGRESS
+  RESOLVED
+}
