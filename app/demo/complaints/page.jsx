@@ -12,11 +12,18 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function ComplaintsDemo() {
-  const complaints = await prisma.complaint.findMany({
-    include: { user: true },
-    orderBy: { createdAt: "desc" },
-  });
+  let complaints = [];
+  try {
+    complaints = await prisma.complaint.findMany({
+      include: { user: true },
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (error) {
+    console.warn("Failed to fetch complaints (likely during build):", error);
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 pb-32 md:pb-20 relative overflow-x-hidden">

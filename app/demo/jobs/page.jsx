@@ -13,11 +13,18 @@ import {
 import Link from "next/link";
 import { formatDistanceToNow } from "date-fns";
 
+export const dynamic = "force-dynamic";
+
 export default async function JobsDemo() {
-  const jobs = await prisma.job.findMany({
-    include: { company: true },
-    orderBy: { createdAt: "desc" },
-  });
+  let jobs = [];
+  try {
+    jobs = await prisma.job.findMany({
+      include: { company: true },
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (error) {
+    console.warn("Failed to fetch jobs (likely during build):", error);
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400 font-sans text-slate-900 pb-32 md:pb-20 relative">
