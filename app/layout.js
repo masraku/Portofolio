@@ -27,13 +27,11 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.masraku.dev',
-    images: ['/assets/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Raku — Fullstack Web Developer',
     description: 'Building digital experiences that matter.',
-    images: ['/assets/og-image.png'],
   },
 }
 
