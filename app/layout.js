@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata = {
-  metadataBase: new URL('https://www.masraku.dev'),
+  metadataBase: new URL('https://masraku.dev'),
   title: 'Raku — Fullstack Web Developer',
   description:
     'Fullstack web developer specializing in building scalable, modern web applications with Next.js, React, and Node.js. Based in Indonesia.',
@@ -26,7 +26,7 @@ export const metadata = {
     description: 'Building digital experiences that matter.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.masraku.dev',
+    url: 'https://masraku.dev',
   },
   twitter: {
     card: 'summary_large_image',
