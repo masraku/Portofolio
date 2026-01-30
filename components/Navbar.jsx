@@ -50,7 +50,7 @@ export default function Navbar() {
               <Code2 className="w-5 h-5 text-white" />
             </div>
             <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-              Raku
+              Hai, I'm Raku!
             </span>
           </Link>
 

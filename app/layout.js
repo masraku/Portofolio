@@ -25,14 +25,14 @@ export const metadata = {
     description: 'Building digital experiences that matter.',
     type: 'website',
     locale: 'en_US',
-    // url: 'https://your-domain.com', // Uncomment when deployed
-    // images: ['/og-image.jpg'], // Prepare an OpenGraph image in public folder
+    url: 'masraku.dev',
+    images: ['assets/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Raku — Fullstack Web Developer',
     description: 'Building digital experiences that matter.',
-    // images: ['/og-image.jpg'],
+    images: ['assets/og-image.png'],
   },
 }
 
