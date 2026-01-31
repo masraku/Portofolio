@@ -118,7 +118,7 @@ DATABASE_URL="postgresql://user:password@localhost:5432/portfolio"
 ## 📧 Contact
 
 - **Email**: masraku@masraku.dev
-- **Portfolio**: [Your deployed URL]
+- **Portfolio**: https://masraku.dev/
 
 ## 📝 License
 
