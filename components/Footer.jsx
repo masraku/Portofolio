@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4 group w-fit">
-              <div className="p-2 rounded-lg bg-gradient-to-r from-purple-600 to-cyan-500 group-hover:scale-105 transition-transform duration-300">
+              <div className="p-2 rounded-lg bg-gradient-to-r from-gray-700 to-gray-500 group-hover:scale-105 transition-transform duration-300">
                 <Code2 className="w-5 h-5 text-white" />
               </div>
               <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
@@ -40,7 +40,7 @@ export default function Footer() {
                 <li key={item.name}>
                   <Link
                     href={item.path}
-                    className="text-gray-400 hover:text-purple-400 transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -66,7 +66,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/laksmana-rakho-53a9b0245/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-blue-400 text-gray-400 transition-all"
+                className="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white text-gray-400 transition-all"
                 aria-label="LinkedIn"
               >
                 <SiLinkedin className="w-5 h-5" />
@@ -75,7 +75,7 @@ export default function Footer() {
                 href="https://www.instagram.com/masrakuuu/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-pink-400 text-gray-400 transition-all"
+                className="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white text-gray-400 transition-all"
                 aria-label="Instagram"
               >
                 <SiInstagram className="w-5 h-5" />

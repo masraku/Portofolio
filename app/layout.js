@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} text-white antialiased selection:bg-purple-500/30 selection:text-purple-200`}
+        className={`${geistSans.variable} ${geistMono.variable} text-white antialiased selection:bg-white/30 selection:text-white`}
       >
         <AnimatedBackground />
         <Navbar />
