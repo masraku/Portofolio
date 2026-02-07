@@ -80,7 +80,7 @@ export default function Navbar() {
         >
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center justify-between w-full px-4 py-2">
-            <span className="font-bold text-white">Raku</span>
+            <span className="font-bold text-white">Rakuuu</span>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-gray-300 hover:text-white"

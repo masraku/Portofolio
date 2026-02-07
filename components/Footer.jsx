@@ -18,7 +18,7 @@ export default function Footer() {
                 <Code2 className="w-5 h-5 text-white" />
               </div>
               <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-                Raku
+                Rakuuu
               </span>
             </Link>
             <p className="text-gray-400 max-w-sm leading-relaxed">
