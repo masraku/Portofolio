@@ -30,17 +30,20 @@ export default function Footer() {
           {/* Links Column */}
           <div>
             <h3 className="font-bold text-white mb-4">Navigation</h3>
-            <ul className="space-y-3">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {[
                 { name: "Projects", path: "/projects" },
                 { name: "Experience", path: "/experience" },
                 { name: "About", path: "/about" },
                 { name: "Contact", path: "/contact" },
+                { name: "Pricing", path: "/pricing" },
+                { name: "Skills", path: "/skills" },
+                // Add more links if needed, or keep it balanced at 4 items for 2x2 grid
               ].map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.path}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
                   >
                     {item.name}
                   </Link>

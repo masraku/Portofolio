@@ -15,16 +15,18 @@ import {
   Layout,
   FileText,
   Mail,
+  DollarSign,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { name: "Home", path: "#home", icon: Home },
-  { name: "About", path: "#about", icon: User },
-  { name: "Skills", path: "#skills", icon: Code2 },
-  { name: "Experience", path: "#experience", icon: Briefcase },
-  { name: "Projects", path: "#projects", icon: Layout },
-  { name: "Contact", path: "#contact", icon: Mail },
+  { name: "About Me?", path: "#about", icon: User },
+  { name: "My Skills", path: "#skills", icon: Code2 },
+  { name: "Some Experience", path: "#experience", icon: Briefcase },
+  { name: "My Projects", path: "#projects", icon: Layout },
+  { name: "Make some Projects?", path: "#pricing", icon: DollarSign },
+  { name: "Let's Talk!", path: "#contact", icon: Mail },
 ];
 
 export default function Navbar() {
@@ -106,7 +108,7 @@ export default function Navbar() {
                   onMouseEnter={() => setHoveredPath(item.path)}
                   onMouseLeave={() => setHoveredPath(null)}
                   className={cn(
-                    "relative flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300",
+                    "relative flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 whitespace-nowrap",
                     isActive ? "text-white" : "text-gray-400 hover:text-white",
                   )}
                 >
