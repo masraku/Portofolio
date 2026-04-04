@@ -25,7 +25,7 @@ const navItems = [
   { name: "My Skills", path: "#skills", icon: Code2 },
   { name: "Some Experience", path: "#experience", icon: Briefcase },
   { name: "My Projects", path: "#projects", icon: Layout },
-  { name: "Make some Projects?", path: "#pricing", icon: DollarSign },
+  { name: "Make some Projects?", path: "https://rakubuatwebsite.masraku.dev", icon: DollarSign, isSpecial: true },
   { name: "Let's Talk!", path: "#contact", icon: Mail },
 ];
 
@@ -100,16 +100,20 @@ export default function Navbar() {
             {navItems.map((item) => {
               const isActive = activeSection === item.path.replace("#", "");
               const isHovered = hoveredPath === item.path;
+              const isExternal = item.path.startsWith("http");
 
               return (
                 <Link
                   key={item.path}
                   href={item.path}
+                  {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   onMouseEnter={() => setHoveredPath(item.path)}
                   onMouseLeave={() => setHoveredPath(null)}
                   className={cn(
                     "relative flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 whitespace-nowrap",
-                    isActive ? "text-white" : "text-gray-400 hover:text-white",
+                    item.isSpecial 
+                      ? "text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 hover:bg-emerald-500/20 hover:border-emerald-500/50 shadow-[0_0_15px_-3px_rgba(16,185,129,0.3)]" 
+                      : isActive ? "text-white" : "text-gray-400 hover:text-white",
                   )}
                 >
                   {/* Hover Background */}
@@ -160,14 +164,18 @@ export default function Navbar() {
             <div className="flex flex-col gap-1 p-2">
               {navItems.map((item) => {
                 const isActive = activeSection === item.path.replace("#", "");
+                const isExternal = item.path.startsWith("http");
                 return (
                   <Link
                     key={item.path}
                     href={item.path}
+                    {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     onClick={() => setMobileMenuOpen(false)}
                     className={cn(
                       "flex items-center gap-3 p-3 rounded-xl transition-all font-medium",
-                      isActive
+                      item.isSpecial
+                        ? "text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 shadow-[0_0_15px_-3px_rgba(16,185,129,0.2)]"
+                        : isActive
                         ? "text-white bg-white/10"
                         : "text-gray-400 hover:text-white hover:bg-white/5",
                     )}
