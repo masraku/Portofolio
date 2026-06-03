@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Card from "@/components/ui/Card";
 import { Github, Globe, ArrowUpRight } from "lucide-react";
-import Image from "next/image";
 import {
   SiNextdotjs,
   SiReact,
@@ -40,15 +39,28 @@ const techIcons = {
   MySQL: { icon: SiMysql, color: "text-blue-400" },
 };
 
+const cardAccents = [
+  "from-emerald-400/25 via-cyan-400/10 to-transparent",
+  "from-violet-400/25 via-fuchsia-400/10 to-transparent",
+  "from-sky-400/25 via-blue-400/10 to-transparent",
+  "from-amber-400/25 via-orange-400/10 to-transparent",
+  "from-lime-400/25 via-emerald-400/10 to-transparent",
+  "from-rose-400/25 via-pink-400/10 to-transparent",
+];
+
 export default function ProjectCard({ project, index = 0 }) {
+  const accent = cardAccents[index % cardAccents.length];
+  const projectNumber = String(index + 1).padStart(2, "0");
+
   return (
-    <Card className="group relative bg-zinc-900/50 border border-white/5 overflow-hidden rounded-3xl hover:border-white/10 transition-colors duration-500 w-full h-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-        {/* Image Section */}
-        <div className="relative h-48 md:h-full overflow-hidden bg-zinc-900 border-b md:border-b-0 md:border-r border-white/5">
+    <Card className="group relative h-full w-full overflow-hidden rounded-[1.75rem] border border-white/10 bg-zinc-950/70 p-0 shadow-2xl shadow-black/20 transition-colors duration-500 hover:border-emerald-300/30">
+      <div className={`pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b ${accent} opacity-80`} />
+
+      <div className="relative z-10 flex h-full flex-col">
+        <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10 bg-zinc-900">
           {project.image ? (
             <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+              className="absolute inset-0 bg-cover bg-top transition-transform duration-700 group-hover:scale-105"
               style={{ backgroundImage: `url(${project.image})` }}
             />
           ) : (
@@ -56,50 +68,50 @@ export default function ProjectCard({ project, index = 0 }) {
               <span className="text-zinc-500">No Preview</span>
             </div>
           )}
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent" />
+          <div className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/40 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
+            #{projectNumber}
+          </div>
         </div>
 
-        {/* Content Section */}
-        <div className="relative p-4 md:p-8 flex flex-col h-full bg-zinc-900/20">
-          <div className="mb-auto">
-            <h3 className="text-lg md:text-2xl font-bold text-white mb-2 md:mb-3 group-hover:text-emerald-400 transition-colors">
+        <div className="flex flex-1 flex-col p-5 md:p-6">
+          <div className="mb-5">
+            <h3 className="mb-2 text-xl font-bold text-white transition-colors group-hover:text-emerald-300 md:text-2xl">
               {project.title}
             </h3>
-            <p className="text-zinc-400 leading-relaxed text-xs md:text-base mb-4 md:mb-6 line-clamp-3 md:line-clamp-none">
+            <p className="line-clamp-3 text-sm leading-relaxed text-zinc-400 md:text-base">
               {project.description}
             </p>
-
-            {/* Tech Stack */}
-            <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-6">
-              {project.tech.map((tech) => {
-                const TechIcon = techIcons[tech]?.icon;
-                const colorClass = techIcons[tech]?.color || "text-zinc-400";
-                return (
-                  <div
-                    key={tech}
-                    className="flex items-center gap-1 md:gap-1.5 px-2 md:px-3 py-0.5 md:py-1 rounded-full bg-white/5 border border-white/5 text-[10px] md:text-xs font-medium text-zinc-300"
-                  >
-                    {TechIcon && (
-                      <TechIcon
-                        className={`w-3 h-3 md:w-3.5 md:h-3.5 ${colorClass}`}
-                      />
-                    )}
-                    <span>{tech}</span>
-                  </div>
-                );
-              })}
-            </div>
           </div>
 
-          {/* Links */}
-          <div className="flex items-center gap-3 md:gap-4 pt-3 md:pt-4 mt-3 md:mt-4 border-t border-white/5">
+          <div className="mb-5 flex flex-wrap gap-2">
+            {project.tech.map((tech) => {
+              const TechIcon = techIcons[tech]?.icon;
+              const colorClass = techIcons[tech]?.color || "text-zinc-400";
+
+              return (
+                <div
+                  key={tech}
+                  className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium text-zinc-300"
+                >
+                  {TechIcon && (
+                    <TechIcon className={`h-3.5 w-3.5 ${colorClass}`} />
+                  )}
+                  <span>{tech}</span>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-auto flex items-center gap-3 border-t border-white/10 pt-4">
             {project.githubUrl && (
               <Link
                 href={project.githubUrl}
                 target="_blank"
-                className="flex items-center gap-1.5 md:gap-2 text-xs md:text-sm font-medium text-zinc-400 hover:text-white transition-colors group/link"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors hover:text-white group/link"
               >
-                <Github className="w-4 h-4" />
+                <Github className="h-4 w-4" />
                 <span>Code</span>
               </Link>
             )}
@@ -108,11 +120,12 @@ export default function ProjectCard({ project, index = 0 }) {
               <Link
                 href={project.liveUrl}
                 target="_blank"
-                className="flex items-center gap-1.5 md:gap-2 text-xs md:text-sm font-medium text-zinc-400 hover:text-emerald-400 transition-colors group/link ml-auto"
+                rel="noopener noreferrer"
+                className="ml-auto flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors hover:text-emerald-300 group/link"
               >
-                <Globe className="w-4 h-4" />
+                <Globe className="h-4 w-4" />
                 <span>Live Demo</span>
-                <ArrowUpRight className="w-3 h-3 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                <ArrowUpRight className="h-3 w-3 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
               </Link>
             )}
           </div>

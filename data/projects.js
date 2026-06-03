@@ -35,4 +35,22 @@ export const projects = [
     liveUrl: 'https://muliaberkatalkes.com',
     image: '/assets/muliaberkat.png',
   },
+  {
+    title: 'NotaKu',
+    description:
+      'A static MVP web app for Indonesian MSMEs that helps calculate selling prices, profit margins, invoices, promo captions, promotional posters, product catalogs, and WhatsApp-based Pro package offers.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'PWA'],
+    githubUrl: 'https://github.com/masraku/bismillahcuan',
+    liveUrl: 'https://cuanotaku.vercel.app/',
+    image: '/assets/notaku.png',
+  },
+  {
+    title: 'staff-management',
+    description:
+      'A team work schedule management app for creating spreadsheet-style shift schedules, managing team members, applying automatic day-off rules, saving sessions in localStorage, and exporting colored schedules to Excel.',
+    tech: ['Next.js', 'JavaScript', 'localStorage', 'xlsx-js-style'],
+    githubUrl: 'https://github.com/masraku/management-staff',
+    liveUrl: 'https://management-staff.vercel.app/',
+    image: '/assets/staff-management.png',
+  },
 ];
