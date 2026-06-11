@@ -154,7 +154,7 @@ export default function AboutSection() {
               },
               {
                 icon: SiLinkedin,
-                href: "https://www.linkedin.com/in/laksmana-rakho-53a9b0245/",
+                href: "https://www.linkedin.com/in/laksmanarakho/",
                 color: "hover:text-white",
               },
               {
