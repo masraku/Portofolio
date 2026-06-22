@@ -5,7 +5,7 @@ export const projects = [
       'A job portal system designed to centralize and present verified job listings, helping job seekers access reliable employment information efficiently. Features include job search, application tracking, and employer dashboards.',
     tech: ['Next.js', 'Prisma', 'PostgreSQL', 'Tailwind'],
     githubUrl: 'https://github.com/masraku/CariKerja',
-    liveUrl: 'https://kerjasimpel.vercel.app',
+    liveUrl: 'https://prototypesiapkerja.vercel.app/',
     image: '/assets/disnaker.png',
   },
   {
